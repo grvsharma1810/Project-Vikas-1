@@ -1,0 +1,170 @@
+<%include partials/header%>
+<!-- Preloader --> 
+<div id="preloader">
+    <div id="status">
+        <div class="spinner">
+              <div class="rect1"></div>
+              <div class="rect2"></div>
+              <div class="rect3"></div>
+              <div class="rect4"></div>
+              <div class="rect5"></div>
+        </div>
+    </div>
+</div>
+<!-- End Preloader -->
+
+<header>
+
+<!-- Bootstrap Menu -->
+<div id="navigation">
+    <div class="navbar-wrapper">
+        <nav class="navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"></a>
+                    </div>
+                    <div id="mynav" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav main-nav-list" style="float: left;">
+                            <li><a href="#home">Dashboard : Logged In</a></li>   
+                            <li><a href="#home">Coins:800</a></li>                            
+                        </ul>
+                        <ul class="nav navbar-nav main-nav-list" style="float: right;">
+                            <li><a href="/logout">Sign out</a></li>                                
+                        </ul> 
+                    </div>      
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="jumbotron" style="background-color:white;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<img src="/images/agri.jpg" style="width:1500px;margin:0px;padding:0px" class="img img-responsive">
+				</div>
+			</div>
+		</div>
+</div>
+<div class="jumbotron"  style="background-color:white;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<button type="button" class="btn btn-danger btn-lg ml-1"><a style="color:black;text-decoration:none" href="#forn">Fill Form</a></button>
+				</div>
+			</div>
+		</div>
+</div>
+<div class="jumbotron">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">Account Analysis</div>
+			</div>
+			<div style="display:inline-flex;" class="card">
+				<div class="card-body">
+					<canvas id="myChart" width="600px"></canvas>	
+				</div>
+				<div class="card-body">
+					<canvas id="myChar" width="600"></canvas>
+				</div>
+			</div>
+		</div>
+</div>
+<div class="container" id="forn" style="background-color:white;">
+		<div class="jumbotron" style="width:500;">
+			<div class="row">
+				<div class="col-md-12">
+				<div class="form-group">
+					<form action="/water/survey" method="POST">
+        				<label>Your Name :</label><br>
+        				<input type="text" name="name" required="text" class="form-control"><br>
+        				<label>Your Aadhar No. :</label><br>
+        				<input type="text" name="aadhar" required="text" class="form-control"><br>
+        				<label>What is total amount of water you received today?</label><br>
+        				<input type="text" name="one" required="text" class="form-control"><br>
+        				<label>What is your daily requirement of water?</label><br>
+        				<input type="text" name="two" required="text" class="form-control"><br>
+        				<label>Do you need extra water supply for irrigation?</label><br>
+        				<input type="radio" name="three" value="yes" required="text">YES
+        				<input type="radio" name="three" value="no" required="text">NO<br>
+        				<label>Total cropland area you have is :</label><br>
+        				<input type="text" name="four" required="text" class="form-control"><br><br>
+        				<button type="submit" class="btn btn-danger btn-lg ml-1">SUBMIT</button>
+    				</form>
+    			</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<script>
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: ['Electricity', 'Fertilizers', 'Seeds', 'Water', 'Compensation'],
+        datasets: [{
+            label: 'Agricultural Survey : Need',
+            data: [70, 60, 45, 55, 70],
+            backgroundColor: [
+                'rgba(0, 255, 0, 0.4)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(0, 255, 0, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+        }
+    }
+});
+
+var ct = document.getElementById('myChar');
+var myChar = new Chart(ct, {
+    type: 'radar',
+    data: {
+        labels: ['Electricity', 'Fertilizers', 'Seeds', 'Water', 'Compensation'],
+        datasets: [{
+            label: 'Agricultural Survey : Supply',
+            data: [65, 20, 45, 55, 35],
+            backgroundColor: [
+                'rgba(0, 255, 0, 0.4)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(0, 255, 0, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+        }
+    }
+});
+
+</script>
+<%include partials/footer%>
