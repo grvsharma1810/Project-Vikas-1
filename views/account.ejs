@@ -20,19 +20,10 @@
     <div class="navbar-wrapper">
         <nav class="navbar-inverse navbar-static-top" role="navigation">
             <div class="container">
-                <div class="row">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#"></a>
-                    </div>
+                <div class="row">                    
                     <div id="mynav" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav main-nav-list" style="float: left;">
-                            <li><a href="#home">Dashboard : Logged In</a></li>   
-                            <li><a href="#home">Coins:800</a></li>                            
+                            <li><a href="#home">Dashboard : Logged In As <%=user%></a></li>                                                     
                         </ul>
                         <ul class="nav navbar-nav main-nav-list" style="float: right;">
                             <li><a href="/logout">Sign out</a></li>                                
@@ -44,22 +35,26 @@
     </div>
 </div>
 <div class="jumbotron" style="background-color:white;">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<img src="/images/agri.jpg" style="width:1500px;margin:0px;padding:0px" class="img img-responsive">
-				</div>
-			</div>
-		</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p style="font-size:5em;">Hi <%=user%>, Welcome to your dashboard</p>                
+                <!-- <img src="/public//images/agri.jpg" style="width:1500px;margin:0px;padding:0px" class="img img-responsive"> -->
+                <img src="https://img.icons8.com/plasticine/100/000000/coins.png">
+                <p>Congratulations!! You have earned 100 coins</p>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="jumbotron"  style="background-color:white;">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<button type="button" class="btn btn-danger btn-lg ml-1"><a style="color:black;text-decoration:none" href="#forn">Fill Form</a></button>
-				</div>
-			</div>
-		</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Earn more by filling this form</p>
+                <button type="button" class="btn btn-danger btn-lg ml-1"><a style="color:black;text-decoration:none" href="#forn">Fill Form</a></button>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="jumbotron">
 		<div class="container">

@@ -9,7 +9,7 @@ var express               = require("express"),
 app = express();
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static(__dirname + "/public"));
+app.use('/public',express.static('public'));
 mongoose.connect("mongodb://localhost/Vikas",{useNewUrlParser: true,useUnifiedTopology: true});
 mongoose.set('useCreateIndex', true);
 
@@ -87,6 +87,13 @@ app.get("/",function(req,res){
     res.render("landing")
 });
 
+app.post("/index",function(req,res){
+    
+})
+app.get("/analysis",function(req,res){    
+    res.sendFile(__dirname + "/public/graph.html");
+});
+
 app.get("/landing",function(req,res){
     res.render("landing")
 });
@@ -97,7 +104,7 @@ app.get("/index",function(req,res){
 
 app.get("/account",function(req,res){
     if(req.isAuthenticated()){
-        res.render("account")
+        res.render("account", {user :req.user.username})
     }
     else{
         res.redirect("login") 

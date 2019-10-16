@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>Anylytics Dashboard</title>
+    <link rel="stylesheet" href="/public/stylesheets/bootstrap.min.css">
+        <!-- jQuery UI CSS -->
+        <link rel="stylesheet" href="/public/stylesheets/jquery-ui.min.css">
+        <link rel="stylesheet" href="/public/stylesheets/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="/public/stylesheets/jquery-ui.theme.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/public/stylesheets/graphStyle.css">
+    <style>
+    .head{
+        height: 10vh;
+        width:100%;
+        background: linear-gradient(to right, #00ff00,#99ffcc,#00ff00);
+        text-align: center;
+        
+        
+        font-size: 5vh;
+        font-weight: 800;
+        border: 1vh solid #003300;
+        margin-bottom: 5vh;
+    }    
+    </style>
+</head>
+
+<body>
+
+    <div class="head">Analytics Dashboard</div>
+    <!-- Bootstrap grid setup -->
+    <div class="container">
+        <div id="selections" class="row">
+            <div class="col-md-4">
+                <!-- <div id="slider-div"> -->
+                    <!-- <label>Year: <span id="dateLabel1">2017</span> - <span id="dateLabel2">2019</span></label> -->
+                    <!-- <div id="date-select"> -->
+                        <select class="date-select form-control">
+                            <option selected value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>                            
+                        </select>
+                    <!-- </div> -->
+                <!-- </div> -->
+            </div>
+            <div class="col-md-4">
+                <select class="var-select form-control">
+                    <option selected value="area1">Bihar</option>
+                    <option value="area2">Punjab</option>
+                    <option value="area3">Uttar Pradesh</option>
+                    <option value="area3">Madhya Pradesh</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="chart-area1"></div>            
+        </div>
+    </div>
+
+<!-- External JS libraries -->
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/jquery-ui.min.js"></script>
+<script src="/public/js/d3.min.js"></script>
+<!-- Custom JS -->
+<!-- <script src="/public/js/lineChart.js"></script>
+<script src="/public/js/pieChart.js"></script> -->
+<script src="/public/js/areaChart.js"></script> 
+<script src="/public/js/main.js"></script>
+
+</body>
+</html>
