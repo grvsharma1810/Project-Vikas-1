@@ -5,6 +5,7 @@ var express               = require("express"),
     User                  = require("./models/user"),
     LocalStrategy         = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose");
+require('dotenv').config()
 
 app = express();
 app.set("view engine","ejs");
@@ -168,6 +169,7 @@ app.get("*",function(req,res){
     res.send("EROR 404!!")
 });
 
-app.listen(3000,function(){
+const port = process.env.PORT || 3000;
+app.listen(port,function(){
     console.log("Server Started");
 });
