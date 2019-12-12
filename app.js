@@ -11,7 +11,8 @@ app = express();
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
-mongoose.connect("mongodb://localhost/Vikas",{useNewUrlParser: true,useUnifiedTopology: true});
+URI = process.env.DATABASE_URI || "mongodb://localhost/Vikas";
+mongoose.connect(URI,{useNewUrlParser: true,useUnifiedTopology: true});
 mongoose.set('useCreateIndex', true);
 
 //Authentication Setup
